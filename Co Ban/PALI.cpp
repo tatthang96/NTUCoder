@@ -3,24 +3,16 @@ using namespace std;
 
 bool Pali(int n)
 {
-    int num = n;
-    int numRev = 0;
-    int temp;
-    if (n / 10 == 0)
-        return true;
-    while(n / 10 != 0)
+    int m = n;
+    int temp = 0;
+    int rev = 0;
+    while(n != 0)
     {
         temp = n % 10;
-        numRev *= 10;
-        numRev += temp * 10;
+        rev = rev*10 + temp;
         n /= 10;
     }
-    numRev += n % 10;
-    if (num == numRev){
-        return true;
-    }
-
-    return false;
+    return (m == rev ? true : false);
 }
 
 int main()
